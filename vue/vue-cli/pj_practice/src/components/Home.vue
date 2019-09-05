@@ -7,7 +7,7 @@
       </mt-swipe-item>
     </mt-swipe> -->
     <mt-swipe :auto="4000" class="swipe-height">
-      <mt-swipe-item v-for="item in 3" :key="item">
+      <mt-swipe-item v-for="item in 3" :key="item" :style="{background:'pink'}">
         {{item}}
       </mt-swipe-item>
     </mt-swipe>
@@ -28,10 +28,10 @@
           </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-          <a href="#">
+          <router-link :to="{name:'shopList'}">
             <span class="mui-icon goodShow"></span>
-            <div class="mui-media-body">商品展示</div>
-          </a>
+            <div class="mui-media-body">购买</div>
+          </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">

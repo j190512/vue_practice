@@ -18,7 +18,7 @@
           <router-link :to="{name:'hotMovie.datail',params:{id:item.id,apikey:apikey}}">
             <img
               class="mui-media-object mui-pull-left"
-              v-lazy="'https://images.weserv.nl/?url='+item.images.small"
+              v-lazy="cacheImgUrl+item.images.small"
             />
             <div class="mui-media-body">
               <span>片名:</span>
@@ -40,9 +40,9 @@ export default {
   data() {
     return {
       movieList: [],
-      apikey: "0df993c66c0c636e29ecbb5344252a4a",
+      cacheImgUrl:this.Global.cacheImgUrl,
+      apikey: this.Global.apikey,
       citys: ["广州", "北京", "上海",'深圳','南京','杭州','香港','澳门'],
-      // directors: [],
       isChoose: 0 //
     };
   },
@@ -50,20 +50,6 @@ export default {
     this.witchCity(this.citys[0]); // 默认选择显示的城市
   },
   methods: {
-    // getDerictors(array) {
-    //   array.forEach(element => {
-    //     if (!element.derictors) {
-    //     //   console.log("获取导演列表失败");
-    //       return;
-    //     }
-    //     element.directors.forEach((item, index) => {
-    //       let names = [];
-    //       names.push(item.name);
-    //       this.directors.push(names);
-    //     });
-    //   });
-    // //   console.log(this.derictors);
-    // },
     witchCity(city) {
       this.$axios
         .get("/douban"+"in_theaters", {
@@ -71,8 +57,8 @@ export default {
         })
         .then(res => {
           this.movieList = res.data.subjects;
-          console.log(this.movieList);
-          console.log(res.data.title);
+
+          console.log(res);
           //   console.log(res.data.subjects)
         //   this.getDerictors(this.movieList);
         })

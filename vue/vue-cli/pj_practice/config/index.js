@@ -19,8 +19,8 @@ module.exports = {
         }
       },
       '/douban': {
-        target: 'https://api.douban.com/v2/movie/', //源地址 
-        changeOrigin: true, //默认false，是否需要改变原始主机头为目标URL
+        target: 'https://api.douban.com/v2/movie/', 
+        changeOrigin: true, 
         pathRewrite: {
           '^/douban': ''
         }
