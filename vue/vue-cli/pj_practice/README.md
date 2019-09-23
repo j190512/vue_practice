@@ -6,7 +6,7 @@
 
 技术： vue2  + vue-router  + ES6 + axios 
 
-框架有 mint-ui(不建议使用，早已经不更新了，推荐vant)，mui
+框架有 mint-ui，mui
 # 项目演示
 
 ![](https://upload-images.jianshu.io/upload_images/19497338-c934d2980d2c2c6c.gif?imageMogr2/auto-orient/strip)
